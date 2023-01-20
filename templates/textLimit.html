@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="text-center">
+    <h3 class="fw-bold" style="color: var(--logo-blue);">Rad Ads Model</h3>
+    <hr>
+    <h3 class="fw-bold mt-3 mb-3">Text limit calculations !</h3>
+    <hr>
+    <h5 class="mt-5 mb-3"><b> Word Count : {{ data.word_count }} </b></h5>
+    {% for word in data.words %}
+    <h5 class="d-inline-block p-2" style="border:2px solid black;">{{ word }}</h5>    
+    {% endfor %} 
+
+    <h5 class="shows-main-theme"><b> Top themes of the images </b></h5>
+	{% for word in data.theme %}
+    <h5 class="d-inline-block p-2" style="border:2px solid black;">{{ word }}</h5>
+    {% endfor %}  
+    <br>
+    <h3>Word Limit Recommendation Score (Out of 10) {{ data.score }} </h3>
+
+    <br>
+    <br>
+      <table class="table table-hover my-3">
+        <h3 class="my-3">Spelling Suggestions Found in the Image</h5>
+        <thead>
+            <tr>
+                <th>Detected Spelling</th>
+                <th>Corrected Spelling</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.corrections %}
+            <tr>
+                <td>{{item['Original Word']}}</td>
+                <td>{{item['Corrected Word']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <img style="width: 75%; height: 75%; "src="{{ data.image }}" alt="image with objects marked" class="img-fluid rounded">
+
+
+</section>
+{% endblock %}

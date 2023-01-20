@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="text-center">
+    <h3 class="fw-bold" style="color: var(--logo-blue);">Rad Ads Model</h3>
+    <hr>
+    <h3 class="fw-bold mt-3 mb-3">Text Area To Composition Area !</h3>
+    <hr>
+    <h5 class="mt-5 mb-3"><b> Text Area To Composition Area Ratio : {{ data.ratio_value }} %</b></h5>
+    {% for word in data.words %}
+    <h5 class="d-inline-block p-2" style="border:2px solid black;">{{ word }}</h5>
+        
+    {% endfor %} 
+    <h3>Textual Composition Area Based Recommendation Score (Out of 10) {{ data.score }} </h3>
+
+</section>
+
+{% endblock %}

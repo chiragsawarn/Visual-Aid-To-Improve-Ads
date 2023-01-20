@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    <section class="text-center">
+      <h3 class="fw-bold" style="color: var(--logo-blue);">Rad Ads Model</h3>
+      <h5>Upload an advertisiment to evaluate !</h5>
+  
+      <div class="d-grid mt-5">
+        <form id="formElement" class="row g-3 needs-validation" method="POST"
+          enctype="multipart/form-data" novalidate>
+          <div class="mx-auto col-md-4 d-inline-block">
+            <input class="form-control" type="file" id="formFile" name="formFile" onchange="showImageOnSelection(this)" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please upload a valid file !
+            </div>
+          </div>
+
+          <div id="afterUploadSection" style="display: none;">
+            <div class="d-inline-block col-md-6 mx-auto">
+              <div class="d-flex">
+                <img id="uploadedImage" class="mx-auto" src="#" alt="uploaded image" />
+                <div id="analysisButtons" class="ms-4 d-flex flex-column justify-content-evenly">
+                  <button type="submit" form="formElement" formaction='/textContrast' class="btn-outline-logo-blue">Analyze&nbspText&nbspContrast!</button>
+                  <button type="submit" form="formElement" formaction='/textLimit' class="btn-outline-logo-blue">Analyze Text Limit!</button>
+                  <button type="submit" form="formElement" formaction='/textAreaToCompositionAreaRatio' class="btn-outline-logo-blue">Analyze Textarea To Composition Area Ratio!</button>
+                  <button type="submit" form="formElement" formaction='/centerToTextArea' class="btn-outline-logo-blue">Find Central theme of Advertisement</button>
+                  <button type="submit" form="formElement" formaction='/objectCount' class="btn-outline-logo-blue">Analyze Object Count!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  
+    <script>
+      function showImageOnSelection(input) {
+        const afterUploadSection = document.getElementById('afterUploadSection');
+        afterUploadSection.style.display = 'block';
+  
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+  
+          reader.onload = function (e) {
+            const uploadedImage = document.getElementById('uploadedImage');
+            uploadedImage.setAttribute('src',e.target.result);
+            uploadedImage.setAttribute('width',500);
+            uploadedImage.setAttribute('height',400);
+          };
+  
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+    {% endblock %}
+ 

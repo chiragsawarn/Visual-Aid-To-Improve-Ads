@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="text-center">
+    <h3 class="fw-bold" style="color: var(--logo-blue);">Rad Ads Model</h3>
+    <hr>
+    <h3 class="fw-bold mt-3 mb-3">Text contrast calculations !</h3>
+    <hr>
+    <img src="{{ data.image }}" alt="image in a grid form" class="img-fluid rounded">
+    <h5 class="mt-5 mb-3"><b> Average contrast value of all characters in the image: {{ data.imageContrast }}</b></h5>
+    <table class="table table-hover">
+        <h5 class="mb-3">Contrast of individual characters</h5>
+        <thead>
+            <tr>
+                <th>Character</th>
+                <th>Contrast Ratio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.characters %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div>
+
+    </div>
+</section>
+{% endblock %}

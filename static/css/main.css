@@ -1,0 +1,48 @@
+:root {
+    --logo-blue: rgb(82, 37, 181);
+    font-family: 'apple-system';
+}
+
+.btn-outline-logo-blue {
+    color: rgb(82, 37, 181);
+    background-color: #ffffff;
+    border-color: rgb(82, 37, 181);
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.btn-outline-logo-blue:hover,
+.btn-outline-logo-blue:active,
+.btn-outline-logo-blue:focus,
+.btn-outline-logo-blue.active {
+    background: rgb(82, 37, 181);
+    color: #ffffff;
+    border-color: rgb(82, 37, 181);
+}
+
+.btn-logo-blue {
+    color: #fff;
+    background-color: rgb(82, 37, 181);
+    border-color: rgb(82, 37, 181);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+  }
+  
+  .btn-logo-blue:hover,
+  .btn-logo-blue:active,
+  .btn-logo-blue:focus,
+  .btn-logo-blue.active {
+    /* let's darken rgb(82, 37, 181) a bit for hover effect */
+    background: rgb(80, 35, 179);
+    color: #ffffff;
+    border-color: rgb(80, 35, 179);
+  }
+
+  .link-to-btn{
+    padding: 4px 8px;
+    height: 40px;
+    border: 2px solid rgb(80, 35, 179);
+    border-radius: 5%;
+    text-decoration: none;
+  }

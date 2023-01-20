@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<section class="text-center">
+    <h3 class="fw-bold" style="color: var(--logo-blue);">Rad Ads Model</h3>
+    <hr>
+    <h3 class="fw-bold mt-3 mb-3">Spotting no. of objects !</h3>
+    <hr>
+    <h5 class="mt-5 mb-3"><b> No. of objects in the image : {{data.object_count}}</b></h5>
+    <h3>Objects Based Recommendation Score (Out of 10) {{ data.score }} </h3>
+    <img style="width: 75%; height: 75%; "src="{{ data.image }}" alt="image with objects marked" class="img-fluid rounded">
+
+    <!-- <table class="table table-hover my-3">
+        <h3 class="my-3">Objects Found in the Image</h5>
+        <thead>
+            <tr>
+                <th>Object</th>
+                <th>Confidence Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.objects %}
+            <tr>
+                <td>{{item.Object}}</td>
+                <td>{{item.Confidence}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> -->
+</section>
+
+    
+{% endblock %}
